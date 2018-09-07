@@ -1,0 +1,43 @@
+{
+    "name": "visual-regression-telegram-bot",
+    "version": "1.0.1",
+    "description": "Visual regression tests via Telegram",
+    "main": "index.js",
+    "scripts": {
+        "start": "node --experimental-modules -r dotenv/config ./src/index.mjs",
+        "dev": "nodemon -w src --experimental-modules -r dotenv/config ./src/index.mjs && npm run serve",
+        "serve": "http-server"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "pretty-quick --staged"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vdiachenko/visual-regression-telegram-bot"
+    },
+    "keywords": [
+        "tests",
+        "regression tests",
+        "telegram bot"
+    ],
+    "author": {
+        "name": "Vlad Diachenko",
+        "email": "dev.vdiachenko@gmail.com"
+    },
+    "license": "ISC",
+    "dependencies": {
+        "backstopjs": "^3.5.10",
+        "dotenv": "^6.0.0",
+        "fastify": "^1.11.2",
+        "fastify-static": "^0.14.0",
+        "telegraf": "^3.22.2"
+    },
+    "devDependencies": {
+        "husky": "^1.0.0-rc.13",
+        "nodemon": "^1.18.3",
+        "prettier": "1.14.2",
+        "pretty-quick": "^1.6.0"
+    }
+}

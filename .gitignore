@@ -1,0 +1,6 @@
+/.idea
+/node_modules
+/.env
+/src/backstop/backstop_data/html_report/
+/src/backstop/backstop_data/bitmaps_test/
+/*.log

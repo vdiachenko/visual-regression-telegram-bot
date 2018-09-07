@@ -1,0 +1,48 @@
+{
+    "id": "befree",
+    "viewports": [
+        {
+            "label": "desktop",
+            "width": 1900,
+            "height": 800
+        }
+    ],
+    "onBeforeScript": "puppet/onBefore.js",
+    "onReadyScript": "puppet/onReady.js",
+    "scenarios": [
+        {
+            "label": "home",
+            "url": "https://www.befree.ru/",
+            "referenceUrl": "",
+            "readyEvent": "",
+            "readySelector": "",
+            "delay": 0,
+            "hideSelectors": [],
+            "removeSelectors": [],
+            "hoverSelector": "",
+            "clickSelector": "",
+            "postInteractionWait": 0,
+            "selectors": [],
+            "selectorExpansion": true,
+            "expect": 0,
+            "misMatchThreshold": 0.1,
+            "requireSameDimensions": true
+        }
+    ],
+    "paths": {
+        "bitmaps_reference": "src/backstop/backstop_data/bitmaps_reference",
+        "bitmaps_test": "src/backstop/backstop_data/bitmaps_test",
+        "engine_scripts": "src/backstop/backstop_data/engine_scripts",
+        "html_report": "src/backstop/backstop_data/html_report",
+        "ci_report": "src/backstop/backstop_data/ci_report"
+    },
+    "report": ["CI"],
+    "engine": "puppeteer",
+    "engineOptions": {
+        "args": ["--no-sandbox"]
+    },
+    "asyncCaptureLimit": 5,
+    "asyncCompareLimit": 50,
+    "debug": false,
+    "debugWindow": false
+}
