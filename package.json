@@ -5,8 +5,7 @@
     "main": "index.js",
     "scripts": {
         "start": "node --experimental-modules -r dotenv/config ./src/index.mjs",
-        "dev": "nodemon -w src --experimental-modules -r dotenv/config ./src/index.mjs && npm run serve",
-        "serve": "http-server"
+        "dev": "nodemon -w src --experimental-modules -r dotenv/config ./src/index.mjs"
     },
     "husky": {
         "hooks": {

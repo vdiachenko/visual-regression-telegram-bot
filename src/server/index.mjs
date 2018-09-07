@@ -16,5 +16,7 @@ export default async () => {
 
     app.use(bot.webhookCallback(pathname))
 
-    return app.listen(process.env.PORT)
+    return app.listen(process.env.PORT, () => {
+        console.log(`Server listening on ${process.env.PORT}`)
+    })
 }
