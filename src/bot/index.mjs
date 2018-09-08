@@ -4,12 +4,7 @@ import testHandler from './handlers/test'
 import approveHandler from './handlers/approve'
 import commandArgs from './middlewares/command-args'
 
-const bot = new Telegraf(process.env.BOT_TOKEN, {
-    telegram: {
-        webhookReply: true,
-    },
-    channelMode: true,
-})
+const bot = new Telegraf(process.env.BOT_TOKEN)
 
 bot.command('reference', commandArgs, referenceHandler)
     .command('test', commandArgs, testHandler)
