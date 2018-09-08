@@ -25,7 +25,9 @@ export default async (command = 'test', project, label) => {
             message:
                 command === 'test'
                     ? '✅ Test passed.'
-                    : '♻️ Reference successfully created.',
+                    : `♻️ *Reference successfully created. Run* \`/test ${project} ${
+                          label ? label : ''
+                      }\` *to generate diff report.*`,
             id,
             reportPath,
             testId,

@@ -6,7 +6,7 @@ export default async ({ reply, state, update, telegram }) => {
         const { message } = await backstop('reference', ...args)
         const { chat, message_id } = update.message
 
-        telegram.sendMessage(chat.id, `*${message}*`, {
+        telegram.sendMessage(chat.id, `${message}`, {
             reply_to_message_id: message_id,
             parse_mode: 'Markdown',
         })
