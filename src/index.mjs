@@ -9,7 +9,7 @@ import server from './server'
         await bot.telegram.setWebhook(webhookUrl)
     }
 
-    server.listen(process.env.PORT, () =>
+    server.listen(process.env.PORT, process.env.ADDRESS, () =>
         console.log(`Server listening on ${process.env.PORT}`)
     )
 })().catch(console.log)
