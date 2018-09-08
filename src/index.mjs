@@ -1,6 +1,15 @@
 import bot from './bot'
 import server from './server'
+;(async () => {
+    const webhookUrl = process.env.PUBLIC_PATH + process.env.BOT_TOKEN
+    const { url: currentWebhookUrl } = await bot.telegram.getWebhookInfo()
 
-server.listen(process.env.PORT, () =>
-    console.log(`Server listening on ${process.env.PORT}`)
-)
+    if (currentWebhookUrl !== webhookUrl) {
+        await bot.telegram.deleteWebhook()
+        await bot.telegram.setWebhook(webhookUrl)
+    }
+
+    server.listen(process.env.PORT, () =>
+        console.log(`Server listening on ${process.env.PORT}`)
+    )
+})()
