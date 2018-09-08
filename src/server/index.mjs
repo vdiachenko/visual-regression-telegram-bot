@@ -5,18 +5,12 @@ import bot from '../bot'
 import expose from '../backstop/expose'
 
 const app = fastify()
+const webhook = '/' + process.env.BOT_TOKEN
 
 app.register(serve, {
     root: expose.__dirname,
 })
 
-export default async () => {
-    const webhookInfo = await bot.telegram.getWebhookInfo()
-    const { pathname } = url.parse(webhookInfo.url)
+app.use(bot.webhookCallback(webhook))
 
-    app.use(bot.webhookCallback(pathname))
-
-    return app.listen(process.env.PORT, () => {
-        console.log(`Server listening on ${process.env.PORT}`)
-    })
-}
+export default app
