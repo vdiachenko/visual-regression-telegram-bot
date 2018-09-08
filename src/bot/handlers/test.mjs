@@ -18,7 +18,7 @@ export default async ({ reply, replyWithMarkdown, state }) => {
                 Markup.inlineKeyboard([
                     Markup.urlButton(
                         '📋 View report',
-                        process.env.PUBLIC_PATH + reportPath
+                        process.env.PUBLIC_URL + reportPath
                     ),
                     Markup.callbackButton('✅ Approve', 'approve'),
                 ]).extra()
