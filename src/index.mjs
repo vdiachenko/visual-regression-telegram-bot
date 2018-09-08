@@ -1,7 +1,7 @@
 import bot from './bot'
 import server from './server'
 ;(async () => {
-    const webhookUrl = process.env.PUBLIC_PATH + process.env.BOT_TOKEN
+    const webhookUrl = `${process.env.PUBLIC_URL}/${process.env.BOT_TOKEN}`
     const { url: currentWebhookUrl } = await bot.telegram.getWebhookInfo()
 
     if (currentWebhookUrl !== webhookUrl) {
