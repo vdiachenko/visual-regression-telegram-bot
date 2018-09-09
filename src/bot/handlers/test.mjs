@@ -27,6 +27,7 @@ export default async ({ reply, replyWithMarkdown, state }) => {
             replyWithMarkdown(generateMessage(testId, id, message))
         }
     } catch (err) {
+        console.log(err)
         reply('Something went wrong... 😢')
     }
 }

@@ -11,6 +11,7 @@ export default async ({ reply, state, update, telegram }) => {
             parse_mode: 'Markdown',
         })
     } catch (err) {
+        console.log(err)
         reply('Something went wrong... 😢')
     }
 }

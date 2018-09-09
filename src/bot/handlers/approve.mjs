@@ -27,6 +27,7 @@ export default async ({ reply, editMessageText, update }) => {
 
         editMessageText(editedMessage, Extra.markdown())
     } catch (err) {
+        console.log(err)
         reply('Something went wrong... 😢')
     }
 }
